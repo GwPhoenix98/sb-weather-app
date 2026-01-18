@@ -1,4 +1,4 @@
-package pixel.academy.weather.api;
+package pixel.academy.weather.app;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

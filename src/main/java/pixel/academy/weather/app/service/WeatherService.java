@@ -3,6 +3,7 @@ package pixel.academy.weather.app.service;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import pixel.academy.weather.app.exception.WeatherException;
 import pixel.academy.weather.app.model.WeatherResponse;
 
 import java.io.BufferedReader;

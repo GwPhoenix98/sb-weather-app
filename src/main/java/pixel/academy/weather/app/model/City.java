@@ -17,7 +17,7 @@ public enum City {
         return name;
     }
 
-    public static City fromOption(String name) {
+    public static City fromName(String name) {
         for (City city : values()) {
             if (city.name.equalsIgnoreCase(name)) {
                 return city;

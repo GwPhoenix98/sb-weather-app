@@ -11,8 +11,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static pixel.academy.weather.app.controller.RootController.getString;
-
 @RestController
 @RequestMapping("/cities")
 public class CityController {
@@ -20,17 +18,11 @@ public class CityController {
     @GetMapping
     public List<CityLink> getCities(HttpServletRequest request) {
 
-        String baseUrl = getBaseUrl(request);
-
         return Arrays.stream(City.values())
                 .map(city -> new CityLink(
                         city.getName(),
                         "/weather/" + city.getName()
                 ))
                 .collect(Collectors.toList());
-    }
-
-    private String getBaseUrl(HttpServletRequest request) {
-        return getString(request);
     }
 }

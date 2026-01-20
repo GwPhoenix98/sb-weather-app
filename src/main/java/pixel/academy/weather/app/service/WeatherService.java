@@ -20,15 +20,14 @@ public class WeatherService {
     @Value("${weather.api.key}")
     private String apiKey;
 
-    @Value("${weather.api.url")
-    private String baseUrl;
+    private static final String BASE_URL = "https://api.openweathermap.org/data/2.5/weather";
 
     public WeatherResponse getWeather(String cityName) {
         validateApiKey();
 
         String encodedCity = URLEncoder.encode(cityName, StandardCharsets.UTF_8);
         String urlString = String.format("%s?q=%s&units=metric&appid=%s",
-                baseUrl, encodedCity, apiKey);
+                BASE_URL, encodedCity, apiKey);
 
         HttpURLConnection conn = null;
 

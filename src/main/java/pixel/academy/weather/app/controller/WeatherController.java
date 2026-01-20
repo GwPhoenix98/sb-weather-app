@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import pixel.academy.weather.app.exception.WeatherException;
 import pixel.academy.weather.app.model.City;
 import pixel.academy.weather.app.model.WeatherResponse;
 import pixel.academy.weather.app.service.WeatherService;

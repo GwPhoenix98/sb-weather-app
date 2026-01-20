@@ -1,4 +1,4 @@
-package pixel.academy.weather.api;
+package pixel.academy.weather.app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -11,6 +11,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static pixel.academy.weather.app.controller.RootController.getString;
+
 @RestController
 @RequestMapping("/cities")
 public class CityController {
@@ -29,17 +31,6 @@ public class CityController {
     }
 
     private String getBaseUrl(HttpServletRequest request) {
-        String scheme = request.getScheme();
-        String serverName = request.getServerName();
-        int serverPort = request.getServerPort();
-
-        StringBuilder baseUrl = new StringBuilder();
-        baseUrl.append(scheme).append("://").append(serverName);
-
-        if ((scheme.equals("http") && serverPort != 80) ||
-                (scheme.equals("https") && serverPort != 443)) {
-            baseUrl.append(":").append(serverPort);
-        }
-        return baseUrl.toString();
+        return getString(request);
     }
 }

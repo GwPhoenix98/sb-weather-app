@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather API</title>
+    <link rel="stylesheet" th:href="@{css/style.css}">
+</head>
+<body>
+<div class="container">
+    <h1>🌦️ Weather App</h1>
+    <p class="subtitle">Click on a city to view current weather</p>
+
+    <ul class="cities-list">
+        <li th:each="city : ${cities}">
+            <a th:href="@{/weather/{cityName}(cityName=${city})}"
+               th:text="${city}">
+                City Name
+            </a>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

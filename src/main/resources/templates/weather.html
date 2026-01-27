@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="'Weather - ' + ${weather.city}">Weather</title>
+    <link rel="stylesheet" th:href="@{/css/weather.css}">
+</head>
+<body>
+
+<div class="container">
+    <h1>
+        <span>📍</span>
+        <span th:text="${weather.city}">City Name</span>
+    </h1>
+
+    <div class="weather-box">
+        <div class="temperature">
+            <span>🌡️</span>
+            <span th:text="${#numbers.formatDecimal(weather.temperature, 1, 1)} + '°C'">
+                    0.0°C
+                </span>
+        </div>
+
+        <div class="description">
+            <span>☁️</span>
+            <span th:text="${weather.description}">
+                    Weather description
+                </span>
+        </div>
+    </div>
+
+    <a href="/cities" class="back-button">
+        ← Back to Cities
+    </a>
+</div>
+</body>
+</html>
